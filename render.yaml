@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: chatpilot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn chatpilot.wsgi:application
+    envVars:
+      - key: OPENROUTER_API_KEY
+        value: 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
