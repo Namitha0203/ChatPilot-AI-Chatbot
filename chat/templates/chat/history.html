@@ -1,0 +1,24 @@
+{% extends 'chat/base.html' %}
+{% block content %}
+<h2 class="text-center mb-4">📜 Your Chat History</h2>
+
+{% if messages %}
+    <div class="list-group">
+        {% for msg in messages %}
+            <div class="list-group-item mb-3 shadow-sm">
+                <p><strong>You:</strong> {{ msg.prompt }}</p>
+                <p><strong>AI:</strong> {{ msg.response }}</p>
+                <small class="text-muted">🕒 {{ msg.created_at|date:"M d, Y H:i" }}</small>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p class="text-center text-muted">No messages yet. Start chatting!</p>
+{% endif %}
+
+<div class="text-center mt-4">
+    <a href="{% url 'chat' %}" class="btn btn-outline-primary">💬 Back to Chat</a>
+    <a href="{% url 'homepage' %}" class="btn btn-link">🏠 Home</a>
+</div>
+{% endblock %}
+

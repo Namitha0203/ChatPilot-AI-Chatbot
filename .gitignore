@@ -1,0 +1,17 @@
+# Ignore environment variables
+.env
+
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+
+# Ignore database and migration artifacts (optional)
+db.sqlite3
+*.log
+*.sqlite3
+
+# Ignore VS Code settings (optional)
+.vscode/
+
+# Ignore static files if generated dynamically
+/static/

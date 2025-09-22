@@ -1,0 +1,30 @@
+{% extends 'chat/base.html' %}
+{% block content %}
+<h2 class="text-center mb-4">💬 Ask the AI</h2>
+
+<form method="post" action="{% url 'chat' %}" class="card p-4 shadow-sm">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="prompt" class="form-label">Your Message</label>
+        <textarea name="prompt" id="prompt" class="form-control" rows="4" placeholder="Type your question here..."></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+</form>
+
+{% if reply %}
+    <div class="mt-4">
+        <h5>AI Response:</h5>
+        <p>{{ reply }}</p>
+    </div>
+{% endif %}
+
+<div class="text-center mt-4">
+    <!-- History page not yet implemented -->
+    <!-- <a href="{% url 'history' %}" class="btn btn-outline-secondary">📜 View History</a> -->
+
+    <!-- Homepage not yet implemented -->
+    <!-- <a href="{% url 'homepage' %}" class="btn btn-link">🏠 Back to Home</a> -->
+
+    <a href="/chat/" class="btn btn-outline-secondary">🔄 Refresh Chat</a>
+</div>
+{% endblock %}
