@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-23*1bd+3a6#2qapaj()39-7su9%n0qw%xtjf*^jeb5q33!8r9w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'chatpilot.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'chatpilot-ai-chatbot.onrender.com']
 
 
 # Application definition
